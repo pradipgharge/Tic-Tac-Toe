@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffd2da;
+  margin: 0;
+  overflow: hidden;
+}
+
+.outer-container {
+  background-color: #fcebee;
+  margin: 5rem 4rem;
+  height: 80vh;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.app-title {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  margin: 0;
+  font-size: 2rem;
+}
+.colorful-text {
+  color: #f34853;
+}
+
+.grid {
+  padding: 12px;
+  border: 1px dashed #f34853;
+  border-spacing: 50px;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  display: grid; /* Use CSS Grid layout */
+  grid-template-rows: repeat(3, auto); /* Three rows with equal height */
+  grid-template-columns: repeat(3, auto); /* Three columns with equal width */
+}
+
+.col {
+  height: 90px;
+  width: 90px;
+  border: 1px dashed #f9d359;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #f34853;
+}
+
+/* adding border radius to specific cells */
+.col:nth-child(1) {
+  border-top-left-radius: 0.5rem;
+}
+
+.col:nth-child(3) {
+  border-top-right-radius: 0.5rem;
+}
+
+.col:nth-child(7) {
+  border-bottom-left-radius: 0.5rem;
+}
+
+.col:nth-child(9) {
+  border-bottom-right-radius: 0.5rem;
+}
+
+/* removing external borders from grid */
+.col:nth-child(-n + 3) {
+  border-top: none;
+}
+
+.col:nth-last-child(-n + 3) {
+  border-bottom: none;
+}
+
+.col:nth-child(3n + 1) {
+  border-left: none;
+}
+
+.col:nth-child(3n) {
+  border-right: none;
+}
+
+/* styles for current player */
+.x {
+  color: #f9d359;
+}
+
+.o {
+  color: #ffffff;
+}
+
+/* new-game btn */
+.new-game {
+  padding: 12px;
+  border-radius: 2rem;
+  border: none;
+  background-color: #f9d359;
+  color: #f34853;
+  cursor: pointer;
+  position: absolute;
+  bottom: 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* winner div */
+.winner-div {
+  display: none;
+  margin: 0;
+  position: absolute;
+  top: 30px;
+  font-size: 2rem;
+}
