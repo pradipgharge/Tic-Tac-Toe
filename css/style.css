@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffd2da;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  background: white;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.emoji {
+  font-size: 80px;
+}
+
+.title-text {
+  color: black;
+  font-size: 40px;
+  padding: 30px 0;
+  font-weight: 800;
+}
+
+/* .animation-text {
+  font-size: 40px;
+  color: #f34853;
+  animation-name: typing;
+  animation-duration: 1.5s;
+  animation-timing-function: steps(30, end);
+  animation-fill-mode: forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+} */
+
+.btn-container {
+  padding-top: 1rem;
+  gap: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 400px;
+}
+
+.play-mode-btn {
+  height: 50px;
+  width: 100%;
+  font-weight: 600;
+  background-color: #f34853;
+  color: #f9d359;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 200ms ease-in;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  &:active {
+    transform: translateY(2px);
+    border-bottom-width: 2px;
+  }
+}
+
+footer {
+  text-align: center;
+  padding-top: 5rem;
+}
+
+.footer-link {
+  color: #f34853;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

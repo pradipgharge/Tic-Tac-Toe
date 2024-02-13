@@ -1,9 +1,13 @@
-const newGame = document.querySelector(".new-game");
+const newGame = document.getElementById("new-game-btn");
+const Homebtn = document.getElementById("home-btn");
 const winnerDiv = document.getElementById("winner-div");
 
 let currentPlayer = "X";
 let arr = Array(9).fill(null);
 
+Homebtn.addEventListener("click", () => {
+  window.location.href = "/index.html";
+});
 newGame.addEventListener("click", () => {
   winnerDiv.style.display = "none";
   arr = Array(9).fill(null);

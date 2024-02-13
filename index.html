@@ -3,31 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <div class="outer-container">
-      <h4 class="app-title">
-        TIC
-        <span class="colorful-text">TAC</span>
-        TOE
-      </h4>
-      <h4 id="winner-div" class="winner-div"></h4>
-      <div class="grid">
-        <div onclick="handleClick(this)" id="0" class="col"></div>
-        <div onclick="handleClick(this)" id="1" class="col"></div>
-        <div onclick="handleClick(this)" id="2" class="col"></div>
-        <div onclick="handleClick(this)" id="3" class="col"></div>
-        <div onclick="handleClick(this)" id="4" class="col"></div>
-        <div onclick="handleClick(this)" id="5" class="col"></div>
-        <div onclick="handleClick(this)" id="6" class="col"></div>
-        <div onclick="handleClick(this)" id="7" class="col"></div>
-        <div onclick="handleClick(this)" id="8" class="col"></div>
-      </div>
-      <button class="new-game">New Game</button>
+    <div class="container">
+      <div id="emoji-div" class="emoji"></div>
     </div>
-
-    <script src="script.js"></script>
+    <h3 class="title-text">Tic Tac <span class="animation-text">Toe</span></h3>
+    <div class="btn-container">
+      <button id="single-player" class="play-mode-btn">Single Player</button>
+      <button id="multi-player" class="play-mode-btn">Multi Player</button>
+    </div>
+    <script src="random-emoji.js"></script>
   </body>
+  <footer>
+    <a
+      class="footer-link"
+      href="https://github.com/pradipgharge/Tic-Tac-Toe"
+      target="_blank"
+      >Made with love by Pradip 💛</a
+    >
+  </footer>
 </html>
