@@ -1,6 +1,10 @@
-const emojiDiv = document.getElementById("emoji-div");
-const singlePlayer = document.getElementById("single-player");
-const MultiPlayer = document.getElementById("multi-player");
+const backBtn = document.getElementById("back-btn");
+const playBtn = document.getElementById("play-btn");
+const randomEmojiX = document.getElementById("emoji-x");
+const randomEmojiO = document.getElementById("emoji-o");
+
+let emojiX = getRandomEmoji();
+let emojiO = getRandomEmoji();
 
 function getRandomEmoji() {
   const emojis = [
@@ -116,23 +120,25 @@ function getRandomEmoji() {
   return emojis[randomIndex];
 }
 
-window.addEventListener("load", setEmoji);
-
-singlePlayer.addEventListener("click", () => {
-  window.location.assign("/pages/player.html");
+backBtn.addEventListener("click", () => {
+  window.location.href = "/index.html";
 });
 
-function setEmoji() {
-  //to avoid delay on navigating back to home page
-  emojiDiv.innerText = getRandomEmoji();
+playBtn.addEventListener("click", () => {
+  window.location.href = "./main.html";
+});
 
-  const interval = setInterval(() => {
-    const randomEmoji = getRandomEmoji();
-    emojiDiv.innerText = randomEmoji;
-  }, 1200);
+window.addEventListener("load", () => {
+  randomEmojiX.innerText = emojiX;
+  randomEmojiO.innerText = emojiO;
+});
 
-  // Return a function to clear the interval
-  return function cleanup() {
-    clearInterval(interval);
-  };
-}
+randomEmojiX.addEventListener("click", () => {
+  randomEmojiX.classList.add("selected");
+  randomEmojiO.classList.remove("selected");
+});
+
+randomEmojiO.addEventListener("click", () => {
+  randomEmojiX.classList.remove("selected");
+  randomEmojiO.classList.add("selected");
+});

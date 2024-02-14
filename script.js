@@ -1,13 +1,14 @@
 const newGame = document.getElementById("new-game-btn");
-const Homebtn = document.getElementById("home-btn");
+const homebtn = document.getElementById("home-btn");
 const winnerDiv = document.getElementById("winner-div");
 
 let currentPlayer = "X";
 let arr = Array(9).fill(null);
 
-Homebtn.addEventListener("click", () => {
+homebtn.addEventListener("click", () => {
   window.location.href = "/index.html";
 });
+
 newGame.addEventListener("click", () => {
   winnerDiv.style.display = "none";
   arr = Array(9).fill(null);
@@ -51,12 +52,6 @@ function checkWinner() {
   ) {
     winnerDiv.style.display = "block";
     winnerDiv.innerText = `Winner is ${currentPlayer}!!!`;
-    // Trigger confetti effect
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 },
-    });
     return;
   }
   if (!arr.some((el) => el === null)) {

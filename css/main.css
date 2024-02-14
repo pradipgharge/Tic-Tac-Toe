@@ -91,13 +91,13 @@ body {
 }
 
 /* styles for current player */
-.x {
+/* .x {
   color: #f9d359;
 }
 
 .o {
   color: #ffffff;
-}
+} */
 
 /* winner div */
 .winner-div {
@@ -121,7 +121,7 @@ body {
 }
 
 /* action btn */
-.action-btn {
+.action-bttn {
   padding: 12px;
   border-radius: 10px;
   border: none;
