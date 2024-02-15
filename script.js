@@ -5,7 +5,9 @@ const winnerDiv = document.getElementById("winner-div");
 const emojiX = localStorage.getItem("emojiX");
 const emojiO = localStorage.getItem("emojiO");
 
-let currentPlayer = "X";
+const selectedEmoji = localStorage.getItem("selectedEmoji");
+
+let currentPlayer = selectedEmoji;
 let arr = Array(9).fill(null);
 
 homebtn.addEventListener("click", () => {
@@ -26,14 +28,17 @@ newGame.addEventListener("click", () => {
 });
 
 function handleClick(el) {
+  // Check if the game has already ended
+  if (winnerDiv.style.display === "block") {
+    return;
+  }
   const cellNumber = Number(el.id);
+
+  // Check if the cell is already filled
   if (arr[cellNumber] !== null) {
     return;
   }
   arr[cellNumber] = currentPlayer;
-
-  // Add class based on current player
-  el.classList.add(currentPlayer.toLowerCase());
 
   el.innerText = currentPlayer === "X" ? emojiX : emojiO;
   checkWinner();
@@ -54,12 +59,14 @@ function checkWinner() {
     (arr[2] !== null && arr[2] === arr[4] && arr[4] === arr[6])
   ) {
     winnerDiv.style.display = "block";
-    winnerDiv.innerText = `Winner is ${currentPlayer}!!!`;
+    winnerDiv.innerText = `Winner is ${
+      currentPlayer === "X" ? emojiX : emojiO
+    } !!!`;
     return;
   }
   if (!arr.some((el) => el === null)) {
     winnerDiv.style.display = "block";
-    winnerDiv.innerText = `The game is Draw!!!`;
+    winnerDiv.innerText = `It's a Draw !!!`;
   }
 }
 

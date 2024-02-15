@@ -21,7 +21,19 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
+.warning-toast {
+  padding: 8px;
+  position: absolute;
+  border-radius: 10px;
+  background-color: #f9d359;
+  display: none;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .player-card {
   background-color: #fcebee;
   width: 450px;

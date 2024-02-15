@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -20,15 +21,32 @@ body {
   position: relative;
 }
 
-.app-title {
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
   position: absolute;
-  top: 30px;
-  left: 30px;
-  margin: 0;
+  top: 2cap;
+  width: 100%;
+  gap: 10px;
+}
+
+.app-title {
   font-size: 2rem;
 }
 .colorful-text {
   color: #f34853;
+}
+
+/* winner div */
+.winner-div {
+  display: none;
+  padding: 4px 6px;
+  border-radius: 10px;
+  background-color: #f9d359;
+  display: none;
 }
 
 .grid {
@@ -88,24 +106,6 @@ body {
 
 .col:nth-child(3n) {
   border-right: none;
-}
-
-/* styles for current player */
-/* .x {
-  color: #f9d359;
-}
-
-.o {
-  color: #ffffff;
-} */
-
-/* winner div */
-.winner-div {
-  display: none;
-  margin: 0;
-  position: absolute;
-  top: 30px;
-  font-size: 2rem;
 }
 
 .btn-container {
