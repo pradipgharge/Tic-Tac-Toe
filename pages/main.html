@@ -11,21 +11,37 @@
       <div class="header">
         <h4 class="app-title">
           TIC
-          <span class="colorful-text">TAC</span>
+          <span>TAC</span>
           TOE
         </h4>
         <p id="winner-div" class="winner-div"></p>
       </div>
-      <div class="grid">
-        <div onclick="handleClick(this)" id="0" class="col"></div>
-        <div onclick="handleClick(this)" id="1" class="col"></div>
-        <div onclick="handleClick(this)" id="2" class="col"></div>
-        <div onclick="handleClick(this)" id="3" class="col"></div>
-        <div onclick="handleClick(this)" id="4" class="col"></div>
-        <div onclick="handleClick(this)" id="5" class="col"></div>
-        <div onclick="handleClick(this)" id="6" class="col"></div>
-        <div onclick="handleClick(this)" id="7" class="col"></div>
-        <div onclick="handleClick(this)" id="8" class="col"></div>
+      <div class="app-body">
+        <div class="player-wrapper">
+          <div class="player-box">
+            <div id="player-box1" class="player-emoji">😎</div>
+            <p>score:&nbsp;</p>
+          </div>
+          <p class="player-nameplate">Player 1</p>
+        </div>
+        <div class="grid">
+          <div onclick="handleClick(this)" id="0" class="col"></div>
+          <div onclick="handleClick(this)" id="1" class="col"></div>
+          <div onclick="handleClick(this)" id="2" class="col"></div>
+          <div onclick="handleClick(this)" id="3" class="col"></div>
+          <div onclick="handleClick(this)" id="4" class="col"></div>
+          <div onclick="handleClick(this)" id="5" class="col"></div>
+          <div onclick="handleClick(this)" id="6" class="col"></div>
+          <div onclick="handleClick(this)" id="7" class="col"></div>
+          <div onclick="handleClick(this)" id="8" class="col"></div>
+        </div>
+        <div class="player-wrapper">
+          <div class="player-box">
+            <div id="player-box2" class="player-emoji">😎</div>
+            <p>score:&nbsp;</p>
+          </div>
+          <p class="player-nameplate">Player 2</p>
+        </div>
       </div>
       <div class="btn-container">
         <button id="home-btn" class="action-bttn">Home</button>

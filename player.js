@@ -7,12 +7,16 @@ const playerWarning = document.getElementById("player-warning");
 let emojiX = getRandomEmoji();
 let emojiO = getRandomEmoji();
 
-localStorage.setItem("emojiX", emojiX);
-localStorage.setItem("emojiO", emojiO);
-
 window.addEventListener("load", () => {
   //to avoid using the previous selectedEmoji
   localStorage.setItem("selectedEmoji", "");
+
+  while (emojiX === emojiO) {
+    emojiO = getRandomEmoji();
+  }
+
+  localStorage.setItem("emojiX", emojiX);
+  localStorage.setItem("emojiO", emojiO);
 
   randomEmojiX.innerText = emojiX;
   randomEmojiO.innerText = emojiO;

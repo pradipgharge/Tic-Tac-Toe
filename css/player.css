@@ -24,12 +24,13 @@ body {
   position: relative;
 }
 .warning-toast {
-  padding: 8px;
+  padding: 8px 10px;
   position: absolute;
   border-radius: 10px;
   background-color: #f9d359;
+  border: 1px dashed #f34853;
   display: none;
-  top: 50px;
+  top: 60px;
   left: 50%;
   transform: translate(-50%, -50%);
 }

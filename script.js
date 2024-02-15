@@ -1,6 +1,8 @@
 const newGame = document.getElementById("new-game-btn");
 const homebtn = document.getElementById("home-btn");
 const winnerDiv = document.getElementById("winner-div");
+const playerBoxOne = document.getElementById("player-box1");
+const playerBoxTwo = document.getElementById("player-box2");
 
 const emojiX = localStorage.getItem("emojiX");
 const emojiO = localStorage.getItem("emojiO");
@@ -10,21 +12,24 @@ const selectedEmoji = localStorage.getItem("selectedEmoji");
 let currentPlayer = selectedEmoji;
 let arr = Array(9).fill(null);
 
+window.addEventListener("load", () => {
+  playerBoxOne.innerText = selectedEmoji === "X" ? emojiX : emojiO;
+  playerBoxTwo.innerText = selectedEmoji === "X" ? emojiO : emojiX;
+});
+
 homebtn.addEventListener("click", () => {
   window.location.href = "/index.html";
 });
 
 newGame.addEventListener("click", () => {
+  currentPlayer = selectedEmoji;
   winnerDiv.style.display = "none";
   arr = Array(9).fill(null);
   const cells = document.querySelectorAll(".col");
 
   cells.forEach((cell) => {
     cell.innerText = "";
-    cell.classList.remove("x", "o");
   });
-
-  currentPlayer = "X";
 });
 
 function handleClick(el) {
