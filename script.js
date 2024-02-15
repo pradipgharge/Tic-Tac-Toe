@@ -2,6 +2,9 @@ const newGame = document.getElementById("new-game-btn");
 const homebtn = document.getElementById("home-btn");
 const winnerDiv = document.getElementById("winner-div");
 
+const emojiX = localStorage.getItem("emojiX");
+const emojiO = localStorage.getItem("emojiO");
+
 let currentPlayer = "X";
 let arr = Array(9).fill(null);
 
@@ -32,7 +35,7 @@ function handleClick(el) {
   // Add class based on current player
   el.classList.add(currentPlayer.toLowerCase());
 
-  el.innerText = currentPlayer;
+  el.innerText = currentPlayer === "X" ? emojiX : emojiO;
   checkWinner();
 
   //updating the value of currentplayer for next turn
@@ -59,3 +62,5 @@ function checkWinner() {
     winnerDiv.innerText = `The game is Draw!!!`;
   }
 }
+
+document.addEventListener("DOMContentLoaded", function () {});

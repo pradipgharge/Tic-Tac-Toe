@@ -142,3 +142,6 @@ randomEmojiO.addEventListener("click", () => {
   randomEmojiX.classList.remove("selected");
   randomEmojiO.classList.add("selected");
 });
+
+localStorage.setItem("emojiX", emojiX);
+localStorage.setItem("emojiO", emojiO);
